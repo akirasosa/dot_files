@@ -2,14 +2,14 @@
 # you can make as many tabs as you wish...
 
 project_name: ygo-web
-project_root: /Users/asosa01/Dropbox/work/02.products/01.YourGolf/YourGolf-web
-pre: source envs.conf
+project_root: /Users/akira/Dropbox/work/02.products/01.YourGolf/YourGolf-web
+pre: source script/export-envs.sh
 tabs:
   - main:
       layout: main-horizontal
       panes:
-        - source envs.conf && rails s -d
-        - source envs.conf && bundle exec guard
+        - source script/export-envs.sh && rails s -d
+        - source script/export-envs.sh && bundle exec guard
         - #empty, will just run plain bash
         - #empty, will just run plain bash
-  - shell: cd /Users/asosa01/.rvm/gems/ruby-1.9.3-p0/gems && vim
+  - shell: cd /Users/akira/.rvm/gems/ruby-1.9.3-p125/gems && vim
