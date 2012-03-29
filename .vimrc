@@ -102,7 +102,7 @@ set hlsearch     " do not highlight searched for phrases
 set incsearch    " BUT do highlight as you type you search phrase
 set ignorecase
 set so=10        " Keep 10 lines (top/bottom) for scope
-set novisualbell " don't blink
+set visualbell " don't blink
 set noerrorbells " no noises
 set laststatus=2
 set linespace=0
