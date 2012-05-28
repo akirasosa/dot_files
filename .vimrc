@@ -3,6 +3,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
+Bundle 'vim-scripts/Align'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
