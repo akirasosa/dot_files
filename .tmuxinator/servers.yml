@@ -8,6 +8,6 @@ tabs:
   - servers:
       layout: even-vertical
       panes:
-        - mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf
+        - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
         - memcached -vv
