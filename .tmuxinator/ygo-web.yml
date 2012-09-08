@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 project_name: ygo-web
-project_root: /Users/akira/Dropbox/work/02.products/01.YourGolf/YourGolf-web
+project_root: /Users/akira/Dropbox/work/02.products/01.YourGolf/YGO-web
 pre: source script/export-envs.sh
 tabs:
   - main:
