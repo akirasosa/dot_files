@@ -194,7 +194,7 @@ let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " ctrlp
-set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*
+set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*
 
 " neocomplcache
 let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
