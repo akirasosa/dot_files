@@ -165,3 +165,9 @@ alias mv="mv -i"
 # cd 後に自動で ls
 function cd() { builtin cd $@ && ls;}
 
+function urlencode () {
+  echo $* | nkf -eMQ | tr = %
+}
+function urldecode () {
+  echo $* | tr % = | nkf -emQ
+}

@@ -9,3 +9,5 @@
 [user]
         name = Akira Sosa
 	email = akirasosa@gmail.com
+[push]
+	default = simple
