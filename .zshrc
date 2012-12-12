@@ -114,6 +114,14 @@ ZSH_THEME="sporty_256"
 #ZSH_THEME="xiong-chiamiov-plus"
 #ZSH_THEME="xiong-chiamiov"
 #ZSH_THEME="zhann"
+#ZSH_THEME=adben
+#ZSH_THEME="candy-kingdom"
+#ZSH_THEME="frontcube"
+#ZSH_THEME=intheloop
+#ZSH_THEME=junkfood
+#ZSH_THEME=kafeitu
+#ZSH_THEME=simonoff
+#ZSH_THEME=tjkirch_mod
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
