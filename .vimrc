@@ -10,6 +10,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'SQLUtilities'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Specky'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'aniero/vim-copy-as-rtf'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'edsono/vim-matchit'
@@ -80,8 +81,8 @@ endif
 " Theme/Colors
 set t_Co=256
 set background=dark
-"colorscheme desert
-colorscheme xoria256
+"colorscheme xoria256
+colorscheme jellybeans
 
 " Vim UI
 set wildmenu     " turn on wild menu
