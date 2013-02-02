@@ -3,14 +3,11 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
-Bundle 'FuzzyFinder'
-Bundle 'L9'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SQLUtilities'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Specky'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'aniero/vim-copy-as-rtf'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'edsono/vim-matchit'
@@ -42,6 +39,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'xolox/vim-session'
+Bundle 'troydm/easybuffer.vim'
 
 " key map
 imap <C-j> <esc>
@@ -96,6 +94,7 @@ set mouse=a      " use mouse everywhere
 set report=0     " tell us when anything is changed via :...
 set noerrorbells " don't make noise
 set fillchars=vert:\ ,stl:\ ,stlnc:\
+set cursorline
 set guioptions=
 
 " Visual Cues
@@ -155,18 +154,6 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 " 前回終了した場所に戻る
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" FuzzyFinder.vim
-"let g:fuf_modesDisable = []
-"nnoremap <Space>f f
-"nnoremap <Space>F F
-"nnoremap f <Nop>
-"nnoremap <silent> fb :<C-u>FufBuffer!<CR>
-"nnoremap <silent> ff :<C-u>FufFile!<C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
-"nnoremap <silent> fm :<C-u>FufMruFile!<CR>
-"nnoremap <silent> tb :<C-u>tabnew<CR>:tabmove<CR>:FufBuffer!<CR>
-"nnoremap <silent> tf :<C-u>tabnew<CR>:tabmove<CR>:FufFile!<C-r>=expand('#:~:.')[:-1-len(expand('#:~:.:t'))]<CR><CR>
-"nnoremap <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 
 " grep.vim
 let Grep_Find_Use_Xargs = 0
@@ -230,3 +217,5 @@ let g:EasyMotion_leader_key = '<Leader>'
 " NERDCommenter
 map <Leader>x <space>c<space>
 
+" easybuffer
+nnoremap <silent> <C-m> :EasyBufferToggle<CR>
