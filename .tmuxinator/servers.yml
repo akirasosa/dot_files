@@ -3,11 +3,12 @@
 
 project_name: servers
 project_root: ~/
-pre: mysql.server restart
+#pre: mysql.server restart
 tabs:
   - servers:
       layout: even-vertical
       panes:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
-        - memcached -vv
+        - java -jar /usr/local/Cellar/jenkins/1.500/libexec/jenkins.war --httpPort=8081
+        #- memcached -vv
