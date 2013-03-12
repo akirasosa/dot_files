@@ -40,6 +40,7 @@ Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'xolox/vim-session'
 Bundle 'troydm/easybuffer.vim'
+Bundle 'w0ng/vim-hybrid'
 
 " key map
 imap <C-j> <esc>
@@ -81,6 +82,7 @@ set t_Co=256
 set background=dark
 "colorscheme xoria256
 colorscheme jellybeans
+"colorscheme hybrid
 
 " Vim UI
 set wildmenu     " turn on wild menu

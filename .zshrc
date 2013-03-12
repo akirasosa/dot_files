@@ -122,6 +122,7 @@ ZSH_THEME="sporty_256"
 #ZSH_THEME=kafeitu
 #ZSH_THEME=simonoff
 #ZSH_THEME=tjkirch_mod
+#ZSH_THEME="michelebologna"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -140,7 +141,7 @@ ZSH_THEME="sporty_256"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew vi-mode bundler gem git-flow heroku osx rails3 ruby rvm autojump vundle redis-cli taskwarrior)
+plugins=(git brew vi-mode bundler gem git-flow heroku osx rails3 ruby rvm autojump vundle redis-cli taskwarrior zeus vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -159,6 +160,7 @@ setopt hist_reduce_blanks    # 余分な空白は詰めて記録
 setopt hist_save_no_dups     # ヒストリファイルに書き出すときに、古いコマンドと同じものは無視する。
 setopt hist_no_store         # historyコマンドは履歴に登録しない
 setopt hist_expand           # 補完時にヒストリを自動的に展開
+setopt nocorrectall
 
 # history completion
 autoload history-search-end

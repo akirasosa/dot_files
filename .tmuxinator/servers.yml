@@ -10,5 +10,5 @@ tabs:
       panes:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
-        - java -jar /usr/local/Cellar/jenkins/1.500/libexec/jenkins.war --httpPort=8081
+        - java -jar /usr/local/opt/jenkins/libexec/jenkins.war
         #- memcached -vv
