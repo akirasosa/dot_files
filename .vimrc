@@ -7,19 +7,14 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SQLUtilities'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Specky'
-Bundle 'aniero/vim-copy-as-rtf'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'juvenn/mustache.vim'
-Bundle 'kana/vim-operator-replace'
-Bundle 'kana/vim-operator-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
 Bundle 'msanders/cocoa.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'othree/html5.vim'
@@ -36,11 +31,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/Align'
-Bundle 'vim-scripts/grep.vim'
-Bundle 'xolox/vim-session'
 Bundle 'troydm/easybuffer.vim'
-Bundle 'w0ng/vim-hybrid'
 
 " key map
 imap <C-j> <esc>
@@ -137,9 +128,6 @@ set foldlevel=100     " Don't autofold anything (but I can still fold manually)
 set foldopen-=search  " don't open folds when you search into them
 set foldopen-=undo    " don't open folds when you undo stuff
 
-" functions
-command Rst :!rst2html.py % > /tmp/rstprev.html && open /tmp/rstprev.html
-
 " 新規ファイル保存時にディレクトリを作成する
 augroup vimrc-auto-mkdir  " {{{
   autocmd!
@@ -156,15 +144,6 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 " 前回終了した場所に戻る
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" grep.vim
-let Grep_Find_Use_Xargs = 0
-let Grep_Shell_Quote_Char = '"'
-let Grep_Skip_Dirs        = '.svn'
-let Grep_Skip_Dirs        = '.git'
-let Grep_Skip_Files       = '*.bak *~'
-" カーソル下の単語をGrepBufferする
-nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
 " SQLUtilities
 vmap <silent>sf        <Plug>SQLU_Formatter<CR>

@@ -11,4 +11,5 @@ tabs:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
         - java -jar /usr/local/opt/jenkins/libexec/jenkins.war
+        - elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
         #- memcached -vv

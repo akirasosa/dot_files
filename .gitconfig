@@ -1,13 +1,14 @@
- [core]
-        pager = lv -c
-        excludesfile = ~/.gitignore
-	editor = /usr/bin/vim
+[core]
+  ;pager = lv -c
+  pager = vimpager
+  excludesfile = ~/.gitignore
+  editor = /usr/bin/vim
 [gui]
-        encoding = utf-8
+  encoding = utf-8
 [color]
-        diff = auto
+  diff = auto
 [user]
-        name = Akira Sosa
-	email = akirasosa@gmail.com
+  name = Akira Sosa
+  email = akirasosa@gmail.com
 [push]
-	default = tracking
+  default = tracking
