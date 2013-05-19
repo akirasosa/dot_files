@@ -32,8 +32,9 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'troydm/easybuffer.vim'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'gregsexton/gitv'
+Bundle 'rking/ag.vim'
 
 " key map
 imap <C-j> <esc>
@@ -163,7 +164,7 @@ let g:quickrun_config = {}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
 
 " NERDTree
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
 " ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*
@@ -202,3 +203,6 @@ map <Leader>x <space>c<space>
 
 " easybuffer
 nnoremap <silent> <C-m> :EasyBufferToggle<CR>
+
+" gitv
+nnoremap <silent> <C-g> :Gitv!<CR>
