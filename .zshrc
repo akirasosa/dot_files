@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
+#ZSH_THEME="avit"
 #ZSH_THEME="3den"
 #ZSH_THEME="adben"
 #ZSH_THEME="af-magic"
@@ -37,7 +38,7 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="edvardm"
 #ZSH_THEME="evan"
 #ZSH_THEME="example"
-ZSH_THEME="fino-time"
+#ZSH_THEME="fino-time"
 #ZSH_THEME="fino"
 #ZSH_THEME="fishy"
 #ZSH_THEME="flazz"
@@ -60,7 +61,7 @@ ZSH_THEME="fino-time"
 #ZSH_THEME="jbergantine"
 #ZSH_THEME="jispwoso"
 #ZSH_THEME="jnrowe"
-#ZSH_THEME="jonathan"
+ZSH_THEME="jonathan"
 #ZSH_THEME="josh"
 #ZSH_THEME="jreese"
 #ZSH_THEME="jtriley"
