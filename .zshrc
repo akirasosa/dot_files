@@ -44,7 +44,7 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="flazz"
 #ZSH_THEME="fletcherm"
 #ZSH_THEME="fox"
-#ZSH_THEME="frisk"
+ZSH_THEME="frisk"
 #ZSH_THEME="frontcube"
 #ZSH_THEME="funky"
 #ZSH_THEME="fwalch"
@@ -61,7 +61,7 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="jbergantine"
 #ZSH_THEME="jispwoso"
 #ZSH_THEME="jnrowe"
-ZSH_THEME="jonathan"
+#ZSH_THEME="jonathan"
 #ZSH_THEME="josh"
 #ZSH_THEME="jreese"
 #ZSH_THEME="jtriley"
@@ -188,3 +188,5 @@ function urlencode () {
 function urldecode () {
   echo $* | tr % = | nkf -emQ
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
