@@ -148,7 +148,7 @@ ZSH_THEME="frisk"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew vi-mode bundler gem git-flow heroku osx rails3 ruby rvm autojump vundle redis-cli taskwarrior zeus vagrant)
+plugins=(git brew vi-mode bundler gem heroku osx rails ruby rvm autojump vundle redis-cli vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
