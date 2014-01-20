@@ -1,8 +1,11 @@
 " Bundles
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle/
+
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SQLUtilities'
@@ -16,9 +19,10 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/cocoa.vim'
-Bundle 'msanders/snipmate.vim'
+Bundle 'honza/vim-snippets'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'jakar/vim-json'
 Bundle 'php.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
