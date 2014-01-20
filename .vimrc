@@ -165,6 +165,9 @@ nmap <silent>scp       <Plug>SQLU_CreateProcedure<CR>
 " syntastics
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+let g:syntastic_quiet_messages = { "level": "warnings",
+      \ "type":  "style",
+      \ "regex": 'was used before it was defined', }
 
 " quickrun
 let g:quickrun_config = {}
