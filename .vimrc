@@ -20,6 +20,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/cocoa.vim'
 Bundle 'honza/vim-snippets'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jakar/vim-json'
@@ -177,11 +180,16 @@ set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*,build/*
 let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
 let g:neocomplcache_enable_at_startup = 1               " Use neocomplcache.
 let g:neocomplcache_enable_smart_case = 1               " Use smartcase.
-let g:neocomplcache_enable_camel_case_completion = 1    " Use camel case completion.
-let g:neocomplcache_enable_underbar_completion = 1      " Use underbar completion.
 let g:neocomplcache_min_syntax_length = 3               " Set minimum syntax keyword length.
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_auto_select = 1              " AutoComplPop like behavior.
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
