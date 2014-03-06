@@ -154,8 +154,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 setopt inc_append_history    # 履歴をインクリメンタルに追加
 setopt share_history         # 履歴の共有
@@ -189,6 +189,4 @@ function urlencode () {
 function urldecode () {
   echo $* | tr % = | nkf -emQ
 }
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
