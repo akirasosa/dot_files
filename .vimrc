@@ -41,6 +41,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'gregsexton/gitv'
 Bundle 'rking/ag.vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'kana/vim-operator-user.git'
+Bundle 'kana/vim-operator-replace'
 
 " key map
 imap <C-j> <esc>
@@ -50,8 +52,7 @@ set pastetoggle=<C-E>
 nnoremap <C-g>p `.zz
 nnoremap <C-g><C-o> g;
 nnoremap <C-g><C-i> g,
-nmap _ <Plug>(operator-replace)
-nnoremap riw ciw<C-r>0<ESC>
+nmap R <Plug>(operator-replace)
 
 " General
 filetype on               " detect the type of file
