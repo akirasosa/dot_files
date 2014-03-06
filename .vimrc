@@ -51,6 +51,7 @@ nnoremap <C-g>p `.zz
 nnoremap <C-g><C-o> g;
 nnoremap <C-g><C-i> g,
 nmap _ <Plug>(operator-replace)
+nnoremap riw ciw<C-r>0<ESC>
 
 " General
 filetype on               " detect the type of file
@@ -67,6 +68,11 @@ set imsearch=0
 set ffs=unix,dos,mac
 set regexpengine=1
 
+" Theme/Colors
+set t_Co=256
+set background=dark
+colorscheme jellybeans
+
 " OS dependent
 if has("win32")
   set guifont=MS_Gothic:h11:cSHIFTJIS
@@ -78,10 +84,6 @@ else
   set guifontset=a14,r14,k14
 endif
 
-" Theme/Colors
-set t_Co=256
-set background=dark
-colorscheme jellybeans
 
 " Vim UI
 set wildmenu     " turn on wild menu
