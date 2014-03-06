@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SQLUtilities'
 Bundle 'Shougo/neocomplcache'
@@ -38,10 +37,10 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'troydm/easybuffer.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'gregsexton/gitv'
 Bundle 'rking/ag.vim'
+Bundle 'nanotech/jellybeans.vim'
 
 " key map
 imap <C-j> <esc>
@@ -66,6 +65,7 @@ set noswapfile
 set iminsert=0
 set imsearch=0
 set ffs=unix,dos,mac
+set regexpengine=1
 
 " OS dependent
 if has("win32")
@@ -81,9 +81,7 @@ endif
 " Theme/Colors
 set t_Co=256
 set background=dark
-"colorscheme xoria256
 colorscheme jellybeans
-"colorscheme hybrid
 
 " Vim UI
 set wildmenu     " turn on wild menu
@@ -210,14 +208,8 @@ let g:tagbar_type_coffee = {
 \ 'ctagsargs' : ' ',
 \}
 
-" easymotion
-let g:EasyMotion_leader_key = '<Leader>'
-
 " NERDCommenter
 map <Leader>x <space>c<space>
-
-" easybuffer
-nnoremap <silent> <C-m> :EasyBufferToggle<CR>
 
 " gitv
 nnoremap <silent> <C-g> :Gitv!<CR>

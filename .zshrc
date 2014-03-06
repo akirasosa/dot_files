@@ -178,6 +178,7 @@ bindkey "^N" history-beginning-search-forward-end
 
 # alias
 alias mv="mv -i"
+alias tmux="tmux -u"
 
 # cd 後に自動で ls
 function cd() { builtin cd $@ && ls;}
