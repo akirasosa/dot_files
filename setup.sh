@@ -8,6 +8,7 @@ find `pwd` -maxdepth 1 -mindepth 1 -name '.*' | \
   xargs -I{} ln -fs {} $HOME
 
 git submodule init && git submodule update
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 vim +BundleInstall +qall
 
