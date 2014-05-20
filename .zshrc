@@ -190,3 +190,6 @@ function urldecode () {
   echo $* | tr % = | nkf -emQ
 }
 
+
+# added by travis gem
+[ -f /Users/akira/.travis/travis.sh ] && source /Users/akira/.travis/travis.sh

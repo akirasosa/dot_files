@@ -1,14 +1,21 @@
 [core]
   ;pager = lv -c
-  pager = vimpager
-  excludesfile = ~/.gitignore
+	pager = lv -c
+	excludesfile = /Users/akira/.gitignore
   editor = /usr/bin/vim
 [gui]
   encoding = utf-8
 [color]
   diff = auto
+	ui = auto
 [user]
-  name = Akira Sosa
-  email = akirasosa@gmail.com
+	name = Akira Sosa
+	email = akirasosa@gmail.com
 [push]
   default = tracking
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
