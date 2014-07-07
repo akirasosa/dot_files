@@ -179,6 +179,7 @@ bindkey "^N" history-beginning-search-forward-end
 # alias
 alias mv="mv -i"
 alias tmux="tmux -u"
+alias sourcetree='open -a SourceTree'
 
 # cd 後に自動で ls
 function cd() { builtin cd $@ && ls;}
@@ -194,6 +195,9 @@ function urldecode () {
 [ -f /Users/akira/.travis/travis.sh ] && source /Users/akira/.travis/travis.sh
 
 # peco
-for f (~/.zsh/peco-sources/*) source "${f}"
+for f (~/.zsh/peco-scripts/*) source "${f}"
 bindkey '^r' peco-select-history
 bindkey '^]' peco-src
+
+# android
+for f (~/.zsh/android-scripts/*) source "${f}"
