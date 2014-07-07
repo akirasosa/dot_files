@@ -43,6 +43,7 @@ Bundle 'rking/ag.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'kana/vim-operator-user.git'
 Bundle 'kana/vim-operator-replace'
+Bundle 'rizzatti/dash.vim'
 
 " key map
 imap <C-j> <esc>
@@ -216,3 +217,6 @@ map <Leader>x <space>c<space>
 
 " gitv
 nnoremap <silent> <C-g> :Gitv!<CR>
+
+" dash
+nmap <silent> <leader>d <Plug>DashSearch

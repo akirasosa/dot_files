@@ -190,6 +190,10 @@ function urldecode () {
   echo $* | tr % = | nkf -emQ
 }
 
-
 # added by travis gem
 [ -f /Users/akira/.travis/travis.sh ] && source /Users/akira/.travis/travis.sh
+
+# peco
+for f (~/.zsh/peco-sources/*) source "${f}"
+bindkey '^r' peco-select-history
+bindkey '^]' peco-src
