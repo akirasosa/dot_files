@@ -44,6 +44,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'kana/vim-operator-user.git'
 Bundle 'kana/vim-operator-replace'
 Bundle 'rizzatti/dash.vim'
+Bundle 'Yggdroot/indentLine'
 
 " key map
 imap <C-j> <esc>
@@ -53,7 +54,7 @@ set pastetoggle=<C-E>
 nnoremap <C-g>p `.zz
 nnoremap <C-g><C-o> g;
 nnoremap <C-g><C-i> g,
-nmap R <Plug>(operator-replace)
+nmap r <Plug>(operator-replace)
 
 " General
 filetype on               " detect the type of file
@@ -179,7 +180,7 @@ let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']
 nnoremap <silent> tt :NERDTreeToggle<CR>
 
 " ctrlp
-set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*,build/*
+set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*,build/*,*/node_modules/*,*/bower_components/*
 
 " neocomplcache
 let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
