@@ -45,6 +45,9 @@ Bundle 'kana/vim-operator-user.git'
 Bundle 'kana/vim-operator-replace'
 Bundle 'rizzatti/dash.vim'
 Bundle 'Yggdroot/indentLine'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'wavded/vim-stylus'
 
 " key map
 imap <C-j> <esc>
@@ -221,3 +224,9 @@ nnoremap <silent> <C-g> :Gitv!<CR>
 
 " dash
 nmap <silent> <leader>d <Plug>DashSearch
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
