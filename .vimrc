@@ -225,8 +225,21 @@ nnoremap <silent> <C-g> :Gitv!<CR>
 " dash
 nmap <silent> <leader>d <Plug>DashSearch
 
+" show border on 80 column
 if exists('+colorcolumn')
   set colorcolumn=80
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+" custom diff
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = ""
+  if &diffopt =~ "iwhite"
+    let opt = opt . "-b "
+  endif
+  silent execute "!git-diff-normal-format " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
+  redraw!
+endfunction
+
