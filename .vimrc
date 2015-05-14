@@ -48,11 +48,14 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
+Bundle 'mxw/vim-jsx'
 
 " key map
 imap <C-j> <esc>
 let mapleader=" "
 nnoremap <C-j><C-j> :nohlsearch<CR>
+nnoremap * *N
+nnoremap # #N
 set pastetoggle=<C-E>
 nnoremap <C-g>p `.zz
 nnoremap <C-g><C-o> g;
@@ -161,6 +164,9 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " 前回終了した場所に戻る
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
+" コメント行の後の挿入で自動的にコメントしない
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " SQLUtilities
 vmap <silent>sf        <Plug>SQLU_Formatter<CR>
 nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
@@ -178,6 +184,7 @@ let g:syntastic_quiet_messages = { "level": "warnings",
 " quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
+let g:syntastic_javascript_checkers = ['eslint']
 
 " NERDTree
 nnoremap <silent> tt :NERDTreeToggle<CR>

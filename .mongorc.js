@@ -10244,7 +10244,7 @@ moment.fn.within = function(range) {
 
 /* global chatty */
 
-chatty('\033[1;32m+ MongoDB Shell Extensions (0.2.2) by Gabriele Lana <gabriele.lana@gmail.com>\033[0m')
+chatty('\033[1;32m+ MongoDB Shell Extensions (0.2.7) by Gabriele Lana <gabriele.lana@gmail.com>\033[0m')
 
 DBCollection.prototype.last = function(n) {
   return this.find().sort({_id: -1}).limit(n || 1)
@@ -10303,45 +10303,58 @@ var printcsv = function(x) {
   })
 }
 
-var tocsv = function(x) {
-  var lines = [],
-      fieldNames = {},
-      encodedDocuments = x.map(function(doc) {
-        return _.reduce(doc, function(values, value, field) {
-          fieldNames[field] = true
-          values[field] = tojson(value).replace(
-            /^(?:ISODate|ObjectId)\((.*)\)$/,
-            function(_, contentAsString) {
-              return contentAsString
-            }
-          )
-          return values
-        }, {})
-      })
+var tocsv = (function() {
+  var flatten = function(o) {
+    return _.reduce(o, function(flattened, value, field) {
+      if (_.isPlainObject(value)) {
+        _.forEach(flatten(value), function(nestedValue, nestedField) {
+          flattened[[field, nestedField].join('.')] = nestedValue
+        })
+      } else {
+        flattened[field] = value
+      }
+      return flattened
+    }, {})
+  }
 
-  fieldNames = _.keys(fieldNames)
+  return function(x) {
+    var lines = [],
+        fieldNames = {},
+        encodedDocuments = x.map(function(doc) {
+          return _.reduce(flatten(doc), function(values, value, field) {
+            fieldNames[field] = true
+            values[field] = tojson(value).replace(
+              /^(?:ISODate|ObjectId)\((.*)\)$/,
+              function(_, contentAsString) {
+                return contentAsString
+              }
+            )
+            return values
+          }, {})
+        })
 
-  lines.push(fieldNames.join(','))
-  encodedDocuments.forEach(function(encodedDocument) {
-    lines.push(
-      fieldNames.map(function(fieldName) {
-        if (encodedDocument[fieldName] !== undefined) {
-          return encodedDocument[fieldName]
-        }
-        return '""'
-      }).join(',')
-    )
-  })
+    fieldNames = _.keys(fieldNames)
 
-  return new CSV(lines)
-}
+    lines.push(fieldNames.join(','))
+    encodedDocuments.forEach(function(encodedDocument) {
+      lines.push(
+        fieldNames.map(function(fieldName) {
+          if (encodedDocument[fieldName] !== undefined) {
+            return encodedDocument[fieldName]
+          }
+          return ''
+        }).join(',')
+      )
+    })
+
+    return new CSV(lines)
+  }
+})()
 
 DBQuery.prototype.reverse = function() {
-  if (!this._query.query || _.isEmpty(this._query.query)) {
-    this._query.query = {}
-  }
+  this._checkModify();
   if (!this._query.orderby || _.isEmpty(this._query.orderby)) {
-    this._query.orderby = {'$natural': 1}
+    this._addSpecial('orderby', {'$natural': 1});
   }
   for (var field in this._query.orderby) {
     this._query.orderby[field] = this._query.orderby[field] * -1
@@ -10370,7 +10383,7 @@ DBCollection.prototype.distinctAndCount = function(field, query) {
   query = query || {}
 
   var groupById = _([].concat(field)).reduce(function(result, key) {
-    result[key.replace('.', '_')] = '$' + key; return result
+    result[key.replace(/\./g, '_')] = '$' + key; return result
   }, {})
 
   var it = this.aggregate(
@@ -10379,16 +10392,62 @@ DBCollection.prototype.distinctAndCount = function(field, query) {
     {$project: {values: '$_id', count: 1, _id: 0}}
   )
 
-  if (it.ok === 1) {
-    return _.reduce(it.result, function(all, r) {
-      if (!_.any(r.values, isObject)) {
-        all[_.values(r.values).join(',')] = r.count
-        return all
-      }
-      throw 'distinctAndCount fields could not be objects: ' + tojson(r.values)
-    }, {})
+  var resultIsAnObject = (it.result !== undefined) && (it.ok !== undefined)
+  if (resultIsAnObject && it.ok === 0) {
+    return it
   }
-  return it
+
+  var result = it.result || it.toArray()
+  return _.reduce(result, function(all, r) {
+
+    var isValidValue =
+      _(r.values)
+        .chain()
+        .values()
+        .map(function(value) {
+          if (value === null) {
+            return {valueOf: function() {return value}}
+          }
+          return value
+        })
+        .any(function(value) {
+          if (_(value).isArray()) {
+            return _(value).all(function(value) {
+              return !_(value).isObject()
+            })
+          }
+          // we support values like Number or Date but not {}
+          return value.constructor.name !== ''
+        })
+        .valueOf()
+
+    if (!isValidValue) {
+      throw 'distinctAndCount could not work when one or more fields are objects: ' + tojson(r.values)
+    }
+
+    var key =
+      _(r.values)
+        .chain()
+        .values()
+        .map(function(value) {
+          if (value === null) {
+            return '#null#'
+          }
+          if (_(value.valueOf).isFunction()) {
+            value = value.valueOf()
+          }
+          if (_(value).isArray()) {
+            value = _(value).sort().valueOf()
+          }
+          return value
+        })
+        .valueOf()
+        .join(',')
+
+    all[key] = (all[key] || 0) + r.count
+
+    return all
+  }, {})
 }
 
 DBQuery.prototype.select = function(expression) {
