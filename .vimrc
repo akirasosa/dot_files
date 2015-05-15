@@ -7,12 +7,12 @@ Plug 'Lokaltog/vim-powerline'
 Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' }
 Plug 'vim-scripts/Align'
 Plug 'Shougo/neocomplcache'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'sass', 'css'] }
 Plug 'edsono/vim-matchit'
 Plug 'godlygeek/tabular'
-Plug 'groenewege/vim-less'
+Plug 'groenewege/vim-less', { 'for': ['less', 'css'] }
 Plug 'juvenn/mustache.vim'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'msanders/cocoa.vim'
@@ -20,20 +20,20 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'jakar/vim-json'
+Plug 'othree/html5.vim', { 'for': ['html', 'jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
+Plug 'jakar/vim-json', { 'for': ['js', 'json', 'jsx'] }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/sudo.vim'
-Plug 'sukima/xmledit'
+Plug 'sukima/xmledit', { 'for': ['html', 'jsx', 'xml'] }
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'gregsexton/gitv'
 Plug 'rking/ag.vim'
@@ -42,10 +42,10 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
 Plug 'rizzatti/dash.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'leafgarland/typescript-vim'
-Plug 'digitaltoad/vim-jade'
-Plug 'wavded/vim-stylus'
-Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 call plug#end()
 
 " key map
