@@ -4,7 +4,8 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'Lokaltog/vim-powerline'
-Plug 'vim-scripts/SQLUtilities'
+Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' }
+Plug 'vim-scripts/Align'
 Plug 'Shougo/neocomplcache'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'edsono/vim-matchit'
@@ -23,7 +24,7 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jakar/vim-json'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/sudo.vim'
 Plug 'sukima/xmledit'
@@ -165,11 +166,8 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " SQLUtilities
-vmap <silent>sf        <Plug>SQLU_Formatter<CR>
-nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
-nmap <silent>scd       <Plug>SQLU_GetColumnDef<CR>
-nmap <silent>scdt      <Plug>SQLU_GetColumnDataType<CR>
-nmap <silent>scp       <Plug>SQLU_CreateProcedure<CR>
+let g:sqlutil_align_comma = 1
+nnoremap <Leader>sql :SQLUFormatter<CR>
 
 " syntastics
 let g:syntastic_enable_signs=1
