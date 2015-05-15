@@ -9,7 +9,7 @@ find `pwd` -maxdepth 1 -mindepth 1 -name '.*' | \
 
 git submodule init && git submodule update
 
-vim +BundleInstall +qall
+vim +PlugInstall +qall
 
 echo "You may want to ..."
 echo "cp `pwd`/zshenv.example ~/.zshenv && vim ~/.zshenv"

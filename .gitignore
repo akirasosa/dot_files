@@ -9,4 +9,4 @@ doc/tags
 doc/tags-ja
 tags
 .vim/sessions/
-.vim/bundle/
+.vim/plugged/
