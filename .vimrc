@@ -3,7 +3,6 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
-Plug 'Lokaltog/vim-powerline'
 Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' }
 Plug 'vim-scripts/Align'
 Plug 'Shougo/neocomplcache'
@@ -20,14 +19,14 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'othree/html5.vim', { 'for': ['html', 'jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
-Plug 'jakar/vim-json', { 'for': ['js', 'json', 'jsx'] }
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'jakar/vim-json'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/sudo.vim'
-Plug 'sukima/xmledit', { 'for': ['html', 'jsx', 'xml'] }
+Plug 'sukima/xmledit'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -45,7 +44,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
-Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+Plug 'mxw/vim-jsx'
+Plug 'moll/vim-node'
+Plug 'Townk/vim-autoclose'
 call plug#end()
 
 " key map
@@ -91,7 +92,6 @@ else
   set guifontset=a14,r14,k14
 endif
 
-
 " Vim UI
 set wildmenu     " turn on wild menu
 set ruler        " Always show current positions along the bottom
@@ -100,7 +100,6 @@ set number       " turn on line numbers
 set lz           " do not redraw while running macros (much faster) (LazyRedraw)
 set hid          " you can change buffer without saving
 set backspace=2  " make backspace work normal
-set mouse=a      " use mouse everywhere
 set report=0     " tell us when anything is changed via :...
 set noerrorbells " don't make noise
 set fillchars=vert:\ ,stl:\ ,stlnc:\
@@ -175,11 +174,11 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_quiet_messages = { "level": "warnings",
       \ "type":  "style",
       \ "regex": 'was used before it was defined', }
+let g:syntastic_javascript_checkers = ['eslint']
 
 " quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
-let g:syntastic_javascript_checkers = ['eslint']
 
 " NERDTree
 nnoremap <silent> tt :NERDTreeToggle<CR>
@@ -245,3 +244,5 @@ function MyDiff()
   redraw!
 endfunction
 
+" vim-node
+autocmd User Node setlocal suffixesadd+=.jsx
