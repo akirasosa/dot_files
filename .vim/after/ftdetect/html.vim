@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.html set filetype=xhtml
+"au BufNewFile,BufRead *.html set filetype=xhtml

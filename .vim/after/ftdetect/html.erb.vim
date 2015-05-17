@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.html.erb set filetype=xhtml.eruby syntax=eruby
+"au BufNewFile,BufRead *.html.erb set filetype=xhtml.eruby syntax=eruby

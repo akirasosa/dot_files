@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.gsp set filetype=xhtml syntax=gsp
+"au BufNewFile,BufRead *.gsp set filetype=xhtml syntax=gsp

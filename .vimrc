@@ -46,7 +46,6 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
-Plug 'Townk/vim-autoclose'
 Plug 'lambdalisue/vim-unified-diff'
 call plug#end()
 
