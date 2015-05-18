@@ -47,6 +47,10 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
 Plug 'Townk/vim-autoclose'
+Plug 'mattn/emmet-vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'w0ng/vim-hybrid'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 " key map
@@ -79,7 +83,8 @@ set regexpengine=1
 " Theme/Colors
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme hybrid
 
 " OS dependent
 if has("win32")
@@ -235,7 +240,7 @@ endif
 
 " custom diff
 set diffexpr=MyDiff()
-function MyDiff()
+function! MyDiff()
   let opt = ""
   if &diffopt =~ "iwhite"
     let opt = opt . "-b "
