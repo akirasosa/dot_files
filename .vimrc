@@ -26,7 +26,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/sudo.vim'
-Plug 'sukima/xmledit'
+"Plug 'sukima/xmledit'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -51,6 +51,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'w0ng/vim-hybrid'
 Plug 'elixir-lang/vim-elixir'
+Plug 'lambdalisue/vim-unified-diff'
 call plug#end()
 
 " key map
@@ -239,15 +240,16 @@ else
 endif
 
 " custom diff
-set diffexpr=MyDiff()
-function! MyDiff()
-  let opt = ""
-  if &diffopt =~ "iwhite"
-    let opt = opt . "-b "
-  endif
-  silent execute "!git-diff-normal-format " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
-  redraw!
-endfunction
+set diffexpr=unified_diff#diffexpr()
+
+" configure with the followings (default values are shown below)
+let unified_diff#executable = 'git'
+let unified_diff#arguments = [
+      \   'diff', '--no-index', '--no-color', '--no-ext-diff', '--unified=0',
+      \ ]
+let unified_diff#iwhite_arguments = [
+      \   '--ignore--all-space',
+      \ ]
 
 " vim-node
 autocmd User Node setlocal suffixesadd+=.jsx

@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.twig set filetype=xhtml syntax=htmldjango
+"au BufNewFile,BufRead *.twig set filetype=xhtml syntax=htmldjango
