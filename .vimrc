@@ -36,7 +36,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'gregsexton/gitv'
 Plug 'rking/ag.vim'
-Plug 'nanotech/jellybeans.vim'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
 Plug 'rizzatti/dash.vim'
@@ -46,12 +45,13 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
-Plug 'Townk/vim-autoclose'
+"Plug 'Townk/vim-autoclose'
 Plug 'mattn/emmet-vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'w0ng/vim-hybrid'
 Plug 'elixir-lang/vim-elixir'
 Plug 'lambdalisue/vim-unified-diff'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 " key map
@@ -79,12 +79,10 @@ set noswapfile
 set iminsert=0
 set imsearch=0
 set ffs=unix,dos,mac
-set regexpengine=1
 
 " Theme/Colors
 set t_Co=256
 set background=dark
-"colorscheme jellybeans
 colorscheme hybrid
 
 " OS dependent
