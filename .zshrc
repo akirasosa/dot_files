@@ -214,3 +214,4 @@ bindkey '^]' peco-src
 
 # android
 for f (~/.zsh/android-scripts/*) source "${f}"
+export PATH="/usr/local/bin:$PATH"

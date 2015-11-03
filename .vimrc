@@ -79,6 +79,7 @@ set noswapfile
 set iminsert=0
 set imsearch=0
 set ffs=unix,dos,mac
+let g:context_filetype#search_offset = 300
 
 " Theme/Colors
 set t_Co=256
@@ -107,7 +108,6 @@ set backspace=2  " make backspace work normal
 set report=0     " tell us when anything is changed via :...
 set noerrorbells " don't make noise
 set fillchars=vert:\ ,stl:\ ,stlnc:\
-set cursorline
 set guioptions=
 
 " Visual Cues
@@ -128,7 +128,6 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:< " what to show when I hit :s
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
 set statusline=%n:\ %<%f\ %m%r%h%w[%{&fileformat}][%{has('multi_byte')&&\ &fileencoding!=''?&fileencoding:&encoding}]\ 0x%B=%b%=%l,%c\ %P
-let loaded_matchparen = 1
 
 " Indent
 set fo=tcrqn     " See Help (complex)
