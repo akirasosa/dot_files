@@ -1,26 +1,28 @@
-# gcc
-export CC=gcc-4.2
-
 export PATH=${PATH}:${HOME}/bin
 
-# for brew
-export PATH=/usr/local/bin:${PATH}
+# for rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# for android sdk
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r16
+# for android
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_SDK_ROOT}/tools:${ANDROID_SDK_ROOT}/platform-tools
 
-# for python
-#export PATH=/usr/local/share/python:${PATH}
+# for java
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=${PATH}:${JAVA_HOME}/bin
 
-# for node.js
-export NODE_PATH=/usr/local/lib/node
-export PATH=${PATH}:/usr/local/share/npm/bin
+# for cocoapods
+export LC_ALL="en_US.UTF-8"
 
-# for rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# for go
+export GOPATH=$HOME
 
-# for tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# for nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# for homebrew
+export PATH=/usr/local/bin:${PATH}
+
+eval "$(direnv hook zsh)"
 
