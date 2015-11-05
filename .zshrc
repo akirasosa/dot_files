@@ -9,10 +9,6 @@ plugins=(
   vi-mode
   autojump
   history-substring-search
-  battery
-  emoji
-  emotty
-  emoji-clock
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -30,3 +26,6 @@ done
 # ensure correct PATH
 source $HOME/.zshenv
 
+
+export FZF_DEFAULT_OPTS="--extended --cycle --reverse --ansi"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
