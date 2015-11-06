@@ -4,8 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bureau"
 
 plugins=(
-  git
-  brew
   vi-mode
   autojump
 )
@@ -32,3 +30,4 @@ source $HOME/.zshenv
 
 # open tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
