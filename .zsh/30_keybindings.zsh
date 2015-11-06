@@ -1,5 +1,4 @@
-bindkey "^P" history-substring-search-up
-bindkey "^N" history-substring-search-down
+bindkey "^P" up-line-or-search
 
 bindkey -r '^T' # unbind fzf-file-widget for tmux binding
 bindkey '^F' fzf-file-widget

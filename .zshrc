@@ -7,9 +7,7 @@ plugins=(
   git
   brew
   vi-mode
-  tmux
   autojump
-  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -32,4 +30,5 @@ done
 # ensure correct PATH
 source $HOME/.zshenv
 
-
+# open tmux
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
