@@ -19,6 +19,15 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# load fzf
+export FZF_DEFAULT_OPTS="--extended --cycle --reverse --ansi"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+
+# load custom scripts
 for f in ~/.zsh/[0-9]*.(sh|zsh)
 do
 	source "$f"
@@ -28,5 +37,3 @@ done
 source $HOME/.zshenv
 
 
-export FZF_DEFAULT_OPTS="--extended --cycle --reverse --ansi"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

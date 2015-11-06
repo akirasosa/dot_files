@@ -137,3 +137,13 @@ c() {
   awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\n", $1, $2}' |
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
+
+fzf-autojump-widget() {
+  local selected_dir=$(autojump -s | tail -r | sed -e '1,7d' | awk '{print $2}' | fzf --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N fzf-autojump-widget
