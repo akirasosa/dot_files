@@ -7,6 +7,7 @@ plugins=(
   git
   brew
   vi-mode
+  tmux
   autojump
   history-substring-search
 )

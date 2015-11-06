@@ -52,6 +52,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'elixir-lang/vim-elixir'
 Plug 'lambdalisue/vim-unified-diff'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'bling/vim-airline'
 call plug#end()
 
 " key map
@@ -127,7 +128,6 @@ set list
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:< " what to show when I hit :set list
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
-set statusline=%n:\ %<%f\ %m%r%h%w[%{&fileformat}][%{has('multi_byte')&&\ &fileencoding!=''?&fileencoding:&encoding}]\ 0x%B=%b%=%l,%c\ %P
 
 " Indent
 set fo=tcrqn     " See Help (complex)
