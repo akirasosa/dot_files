@@ -21,17 +21,6 @@ androidScreenshot() {
   fi
 }
 
-# fzf ghq list
-fghq() {
-  local selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N fghq
-
 #   - CTRL-O to open with `open` command,
 #   - CTRL-E or Enter key to open with the $EDITOR
 fo() {
@@ -138,12 +127,3 @@ c() {
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
-fzf-autojump-widget() {
-  local selected_dir=$(autojump -s | tail -r | sed -e '1,7d' | awk '{print $2}' | fzf --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N fzf-autojump-widget
