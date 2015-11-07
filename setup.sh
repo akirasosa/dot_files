@@ -8,6 +8,7 @@ find `pwd` -maxdepth 1 -mindepth 1 -name '.*' | \
   xargs -I{} ln -fs {} $HOME
 
 git submodule init && git submodule update
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 vim +PlugInstall +qall
 

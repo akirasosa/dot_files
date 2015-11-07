@@ -6,6 +6,7 @@ ZSH_THEME="bureau"
 plugins=(
   vi-mode
   autojump
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
