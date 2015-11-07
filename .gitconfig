@@ -1,7 +1,5 @@
 [core]
-	pager = lv -c
 	excludesfile = /Users/akira/.gitignore
-  editor = /usr/bin/vim
 [gui]
   encoding = utf-8
 [color]
@@ -13,7 +11,7 @@
 [push]
   default = tracking
 [ghq]
-	root = /Users/akira/src
+	root = ~/src
 [diff]
 	tool = vimdiff
 [difftool]
@@ -22,7 +20,4 @@
 	d = difftool
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	path =

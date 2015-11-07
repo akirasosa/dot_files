@@ -1,9 +1,5 @@
-# ~/.tmuxinator/servers.yml
-# you can make as many tabs as you wish...
-
 project_name: servers
 project_root: ~/
-#pre: mysql.server restart
 windows:
   - servers:
       layout: even-vertical
@@ -11,6 +7,4 @@ windows:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
         - elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
-        #- java -jar local/slave.jar -jnlpUrl https://ci.5ik.biz/computer/sosa-mac-book-air/slave-agent.jnlp -secret 3954cadbe93e2d04866719cfa4baf8d0283396172548a88304ee1b582f34f655 -noCertificateCheck
-        #- elasticsearch -f -Des.index.store.type=memory
-        #- memcached -vv
+
