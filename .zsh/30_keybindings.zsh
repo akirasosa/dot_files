@@ -7,8 +7,6 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey -r '^T' # unbind fzf-file-widget for tmux binding
 bindkey '^F' fzf-file-widget
 
-bindkey '^O' fzf-cd-widget
-
 # fzf ghq list
 fzf-ghq-list-widget() {
   local selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER")
