@@ -1,5 +1,18 @@
 #!/bin/sh
 
+# prerequisites
+#autojump
+#ctags
+#direnv
+#fzf
+#macvim
+#neovim
+#sqlite
+#the_silver_searcher
+#tmux
+#vim
+#zsh
+
 cd `dirname $0`
 
 find `pwd` -maxdepth 1 -mindepth 1 -name '.*' | \
