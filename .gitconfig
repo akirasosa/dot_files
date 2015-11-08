@@ -13,7 +13,7 @@
 [ghq]
 	root = ~/src
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
 	prompt = false
 [alias]

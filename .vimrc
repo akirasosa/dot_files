@@ -53,6 +53,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'lambdalisue/vim-unified-diff'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'bling/vim-airline'
+Plug 'ujihisa/neco-look'
 call plug#end()
 
 " key map
@@ -263,3 +264,7 @@ let unified_diff#iwhite_arguments = [
 
 " vim-node
 autocmd User Node setlocal suffixesadd+=.jsx
+
+" spell check
+set spelllang+=cjk
+set nospell
