@@ -4,6 +4,9 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
+bindkey -r '^T' # unbind fzf-file-widget for tmux binding
+bindkey '^F' fzf-file-widget
+
 # fzf ghq list
 fzf-ghq-list-widget() {
   local selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER")
@@ -29,8 +32,8 @@ zle -N fzf-autojump-widget
 bindkey '^J' fzf-autojump-widget
 
 # fzf history
-function fzf-history-widget() {
-    BUFFER=$(\history -n 1 | tac | fzf --query "$LBUFFER")
+fzf-history-widget() {
+    BUFFER=$(\history -n 1 |  fzf --tac -q "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }

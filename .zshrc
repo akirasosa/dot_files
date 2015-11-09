@@ -18,6 +18,7 @@ SAVEHIST=1000000
 
 # fzf
 export FZF_DEFAULT_OPTS="--extended --cycle --reverse --ansi"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # load custom scripts
 for f in ~/.zsh/[0-9]*.(sh|zsh)
@@ -27,7 +28,4 @@ done
 
 # ensure correct PATH
 source $HOME/.zshenv
-
-# open tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
