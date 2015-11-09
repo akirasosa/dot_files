@@ -21,27 +21,50 @@ androidScreenshot() {
   fi
 }
 
-#   - CTRL-O to open with `open` command,
-#   - CTRL-E or Enter key to open with the $EDITOR
-fo() {
-  local out file key
-  out=$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)
-  key=$(head -1 <<< "$out")
-  file=$(head -2 <<< "$out" | tail -1)
-  if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-  fi
+fcd() {
+  local dir
+  dir=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "${dir}"
 }
 
-# cdf - cd into the directory of the selected file
-cdf() {
+fcdf() {
   local file
   local dir
-  file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  file=$(fzf +m -q "$1") && dir=$(dirname "${file}") && cd "${dir}"
 }
 
-# fco - checkout git branch/tag
-fco() {
+fo() {
+  local file
+  file=$(fzf +m -q "$1") && open "${file}"
+}
+
+fe() {
+  local file
+  file=$(fzf +m -q "$1") && ${EDITOR:-vim} "${file}"
+}
+
+fmcd() {
+  local dir
+  dir=$(mdfind "kind:folder" -name "$1" 2> /dev/null | fzf) && cd "${dir}"
+}
+
+fmcdf() {
+  local file
+  local dir
+  file=$(mdfind -name "$1" 2> /dev/null | fzf) && dir=$(dirname "${file}") && cd "${dir}"
+}
+
+fmo() {
+  local file
+  file=$(mdfind -name "$1" 2> /dev/null | fzf) && open "${file}"
+}
+
+fme() {
+  local file
+  file=$(mdfind -name "${1}" 2> /dev/null | fzf) && ${EDITOR:-vim} "${file}"
+}
+
+# checkout git branch/tag
+fgco() {
   local tags branches target
   tags=$(
     git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
@@ -55,8 +78,8 @@ fco() {
   git checkout $(echo "$target" | awk '{print $2}')
 }
 
-# fshow - git commit browser
-fshow() {
+# git commit browser
+fglog() {
   local out shas sha q k
   while out=$(
     git log --graph --color=always \
@@ -97,7 +120,7 @@ ftpane () {
 }
 
 # c - browse chrome history
-c() {
+fchist() {
   local cols sep
   cols=$(( COLUMNS / 3 ))
   sep='{{::}}'
