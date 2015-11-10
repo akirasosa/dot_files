@@ -9,7 +9,7 @@ bindkey '^F' fzf-file-widget
 
 # fzf ghq list
 fzf-ghq-list-widget() {
-  local selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER")
+  local selected_dir=$(ghq list --full-path | fzf -q "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -21,7 +21,7 @@ bindkey '^]' fzf-ghq-list-widget
 
 # fzf autojump
 fzf-autojump-widget() {
-  local selected_dir=$(autojump -s | tac | sed -e '1,7d' | awk '{print $2}' | fzf --query "$LBUFFER")
+  local selected_dir=$(autojump -s | tac | sed -e '1,7d' | awk '{print $2}' | fzf +s -q "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
