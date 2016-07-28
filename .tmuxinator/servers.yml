@@ -6,5 +6,5 @@ windows:
       panes:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
-        - elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+        - elasticsearch
 

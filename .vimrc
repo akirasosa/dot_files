@@ -54,6 +54,8 @@ Plug 'lambdalisue/vim-unified-diff'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'bling/vim-airline'
 Plug 'ujihisa/neco-look'
+Plug 'hashivim/vim-terraform'
+Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 
 " key map
@@ -118,7 +120,8 @@ set mat=5        " how many tenths of a second to blink matching brackets for
 set hlsearch     " do not highlight searched for phrases
 set incsearch    " BUT do highlight as you type you search phrase
 set ignorecase
-set so=10        " Keep 10 lines (top/bottom) for scope
+"set so=10        " Keep 10 lines (top/bottom) for scope
+set so=0        " Keep 10 lines (top/bottom) for scope
 set visualbell " don't blink
 set noerrorbells " no noises
 set laststatus=2
@@ -126,7 +129,6 @@ set linespace=0
 set showcmd
 set nowrap
 set list
-set listchars=tab:\|\ ,trail:.,extends:>,precedes:< " what to show when I hit :set list
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
 
@@ -160,7 +162,7 @@ augroup vimrc-auto-mkdir  " {{{
 augroup END  " }}}
 
 " バッファ保存時に行末の空白を削除する
-autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre * :FixWhitespace
 
 " 前回終了した場所に戻る
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif

@@ -29,3 +29,8 @@ done
 # ensure correct PATH
 source $HOME/.zshenv
 
+
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# for rvm
+source ~/.profile
+
