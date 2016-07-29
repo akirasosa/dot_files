@@ -26,6 +26,9 @@ do
 	source "$f"
 done
 
+# ensure correct profile
+source $HOME/.bash_profile
+
 if type nvim > /dev/null 2>&1; then
   export EDITOR=nvim
 else

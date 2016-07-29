@@ -37,4 +37,3 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 eval "$(direnv hook bash)"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
-
