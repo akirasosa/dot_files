@@ -34,6 +34,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # added by travis gem
 [ -f /Users/akira/.travis/travis.sh ] && source /Users/akira/.travis/travis.sh
 
-eval "$(direnv hook bash)"
-
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
