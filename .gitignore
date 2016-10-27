@@ -12,3 +12,6 @@ tags
 .vim/plugged/
 plug.vim.old
 .vim/init.vim
+.idea
+dist/
+node_modules

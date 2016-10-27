@@ -7,4 +7,6 @@ windows:
         - mongod run --config /usr/local/etc/mongod.conf
         - redis-server /usr/local/etc/redis.conf
         - elasticsearch
+        - logstash -f /Users/akira/work/01.experimental/041.logstash/logstash.conf
+        - kibana
 
