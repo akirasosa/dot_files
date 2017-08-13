@@ -56,6 +56,7 @@ Plug 'bling/vim-airline'
 Plug 'ujihisa/neco-look'
 Plug 'hashivim/vim-terraform'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 " key map
@@ -120,8 +121,8 @@ set mat=5        " how many tenths of a second to blink matching brackets for
 set hlsearch     " do not highlight searched for phrases
 set incsearch    " BUT do highlight as you type you search phrase
 set ignorecase
-"set so=10        " Keep 10 lines (top/bottom) for scope
-set so=0        " Keep 10 lines (top/bottom) for scope
+set so=10        " Keep 10 lines (top/bottom) for scope
+"set so=0        " Keep 10 lines (top/bottom) for scope
 set visualbell " don't blink
 set noerrorbells " no noises
 set laststatus=2
@@ -190,7 +191,8 @@ let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']
 nnoremap <silent> tt :NERDTreeToggle<CR>
 
 " ctrlp
-set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*,build/*,*/node_modules/*,*/bower_components/*
+"set wildignore+=*/.git/*,*/tmp/*,*/.sass-cache/*,log/*,build/*,*/node_modules/*,*/bower_components/*
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " neocomplcache
 let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.

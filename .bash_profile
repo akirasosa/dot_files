@@ -15,6 +15,9 @@ export PATH=${PATH}:${JAVA_HOME}/bin
 # for groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
+# for flutter
+export PATH=/Users/akira/src/github.com/flutter/flutter/bin:${PATH}
+
 # for cocoapods
 export LC_ALL="en_US.UTF-8"
 
@@ -27,6 +30,11 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # for homebrew
 export PATH=/usr/local/bin:${PATH}
 
+# for pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # for rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -35,3 +43,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [ -f /Users/akira/.travis/travis.sh ] && source /Users/akira/.travis/travis.sh
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+

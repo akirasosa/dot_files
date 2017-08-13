@@ -7,6 +7,8 @@ plugins=(
   vi-mode
   autojump
   zsh-syntax-highlighting
+  docker
+  gcloud
 )
 
 source $ZSH/oh-my-zsh.sh
