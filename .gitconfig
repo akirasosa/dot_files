@@ -1,5 +1,6 @@
 [core]
 	excludesfile = /Users/akira/.gitignore
+	editor = vim
 [gui]
   encoding = utf-8
 [color]

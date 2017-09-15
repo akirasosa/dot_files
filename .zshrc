@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="bureau"
+#ZSH_THEME="bureau"
+ZSH_THEME="pure"
 
 plugins=(
   vi-mode
@@ -30,12 +31,6 @@ done
 
 # ensure correct profile
 source $HOME/.bash_profile
-
-if type nvim > /dev/null 2>&1; then
-  export EDITOR=nvim
-else
-  export EDITOR=vim
-fi
 
 eval "$(direnv hook zsh)"
 
